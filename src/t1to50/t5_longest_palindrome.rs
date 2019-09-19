@@ -21,6 +21,7 @@ fn longest_palindrome(s: String) -> String {
     }
 
     let mut point_left = 0;
+    #[allow(unused_assignments)]
     let mut point_right = 0;
     let mut serial_char: Option<&str> = None;
 
