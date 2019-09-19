@@ -5,3 +5,4 @@ mod t4_median_sorted_arrays;
 mod t5_longest_palindrome;
 mod t6_convert;
 mod t7_reverse;
+mod t8_my_atoi;
