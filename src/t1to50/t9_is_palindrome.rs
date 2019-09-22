@@ -75,3 +75,62 @@ fn example3_solution1() {
     let x = 10;
     assert!(!is_palindrome_solution1(x));
 }
+
+
+/// 第二种思路：
+/// 取出一半的数字进行比较
+/// 将末尾的数字弹出，然后与还剩的数值进行比较
+/// 需要区分数字长度的奇偶
+fn is_palindrome_solution2(x: i32) -> bool {
+    if x < 0 || (x % 10 ==  0 && x >= 10) {
+        return false;
+    }
+
+    if x / 10 == 0 {
+        return true;
+    }
+
+
+    let mut r = x;
+
+    let mut t = 0;
+
+    loop {
+        let p = r % 10;
+        r = r / 10;
+
+        if t == r {
+            return true;
+        }
+
+        t = t * 10 + p;
+
+        if t == r {
+            return true;
+        }
+
+        if t > r {
+            break;
+        }
+    }
+
+    false
+}
+
+#[test]
+fn example1_solution2() {
+    let x = 121;
+    assert!(is_palindrome_solution2(x));
+}
+
+#[test]
+fn example2_solution2() {
+    let x = -121;
+    assert!(!is_palindrome_solution2(x));
+}
+
+#[test]
+fn example3_solution2() {
+    let x = 10;
+    assert!(!is_palindrome_solution2(x));
+}
