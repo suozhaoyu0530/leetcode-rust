@@ -6,3 +6,4 @@ mod t5_longest_palindrome;
 mod t6_convert;
 mod t7_reverse;
 mod t8_my_atoi;
+mod t10_is_match;
